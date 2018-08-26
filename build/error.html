@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <title>Тестовое задание RNS</title>
+    <link href="css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  </head>
+  <body>
+    <main class="main-section">
+      <div class="breadcrumbs">
+      <ul class="breadcrumbs__list">
+        <li class="breadcrumbs__item breadcrumbs__item--library">Справочники</li>
+        <li class="breadcrumbs__item"><img src="img/arrow.png" alt="Arrow" width="9" height="9"></li>
+        <li class="breadcrumbs__item breadcrumbs__item--error">Типы ошибок</li>
+        <li class="breadcrumbs__item"><img src="img/arrow.png" alt="Arrow" width="9" height="9"></li>
+      </ul>
+      </div>
+      <h3 class="error-page__title">Грамматическая ошибка</h3>
+      <form class="error-form" action="#" method="post">
+  <fieldset>
+
+
+    <label>
+      Наименование
+      <input type="text" name="name" placeholder="Грамматическая ошибка" required="">
+    </label>
+
+    <label>
+      Тяжесть
+      <input type="text" name="weight" placeholder="1" required="">
+    </label>
+
+    <label>
+      Балл
+      <input type="text" name="point" placeholder="0,25" required="">
+    </label>
+
+    <label>
+      Действует до
+      <input type="text" id="datepicker" placeholder="12.02.2015" style="width: 275px; height: 27px;">
+    </label>
+
+    <div class="textarea">
+    <label>
+      Описание
+      <textarea name="description" placeholder="Описание ошибка"></textarea>
+    </label>
+    </div>
+
+    <label>
+      Единицы измерения
+      <select name="quantity" required="">
+        <option value="1" selected="">Баллы</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+      </select>
+    </label>
+
+  </fieldset>
+  <div class="buttons">
+  <button class="form__button">Сохранить</button>
+  <button class="form__button">Оменить изменения</button>
+  <button class="form__button">Удалить</button>
+  </div>
+
+</form>
+    </main>
+    <script>
+    $( function() {
+      $( "#datepicker" ).datepicker({
+        showOn: "button",
+        buttonImage: "img/icon-calendar.png",
+        buttonImageOnly: true,
+        buttonText: "Select date"
+});
+} );
+</script>
+  </body>
+  </html>

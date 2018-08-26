@@ -1,0 +1,94 @@
+.error-form fieldset
+{
+  border: none;
+  display: flex;
+  flex-direction: column;
+}
+
+.error-form fieldset
+{
+  font-family: "PT Sans";
+  font-size: 14px;
+  line-height: 20px;
+  color: #333333;
+}
+
+.error-form input
+{
+  width: 290px;
+  height: 28px;
+  border-radius: 3px;
+  border: 1px solid #cccccc;
+  margin-left: 145px;
+  position: relative;
+  bottom: 2px;
+  display: block;
+  margin-top: -20px;
+  margin-bottom: 20px;
+}
+
+.error-form select
+{
+  width: 290px;
+  height: 28px;
+  border-radius: 3px;
+  border: 1px solid #cccccc;
+  margin-left: 145px;
+  position: relative;
+  bottom: 2px;
+  display: block;
+  margin-top: -20px;
+  margin-bottom: 20px;
+  -webkit-appearance: none;
+  background-image: url('../img/icon-down.png');
+  background-position: right center;
+  background-repeat: no-repeat;
+  line-height: 1em;
+  /* for FF */
+  -moz-appearance: none;
+  text-indent: 0.01px;
+  text-overflow: '';
+  /* for IE */
+  -ms-appearance: none;
+  appearance: none!important;
+}
+
+.textarea
+{
+  margin-top: -20px;
+}
+
+.error-form textarea
+{
+  width: 290px;
+  height: 110px;
+  border-radius: 3px;
+  border: 1px solid #cccccc;
+  margin-left: 145px;
+  position: relative;
+  bottom: 2px;
+  display: block;
+  margin-top: -20px;
+  margin-bottom: 20px;
+}
+
+.buttons
+{
+  margin-left: 20px;
+}
+
+.form__button
+{
+  font-family: "PT Sans";
+  font-size: 14px;
+  line-height: 20px;
+  color: #fff;
+  background-color: $background-color;
+  padding-left: 11px;
+  padding-right: 11px;
+  padding-top: 6px;
+  padding-bottom: 5px;
+  border-radius: 3px;
+  border: none;
+  margin-right: 20px;
+}

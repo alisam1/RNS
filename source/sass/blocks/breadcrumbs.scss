@@ -1,0 +1,44 @@
+.breadcrumbs
+{
+    margin-left: -20px;
+    margin-top: -5px;
+}
+
+.breadcrumbs__list
+{
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  top: 50px;
+  list-style-type: none;
+}
+
+.breadcrumbs__item
+{
+  font-family: "PT Sans";
+  font-size: 14px;
+  line-height: 20px;
+  color: #0885a0;
+  padding-right: 10px;
+  padding-right: 9px;
+  position: relative;
+  bottom: 5px;
+  left: 9px;
+  &--library
+  {
+    width: 72px;
+    border-bottom: 1px solid #0885a0;
+    position: relative;
+    right: 9px;
+    left: -1px;
+  }
+  &--error
+  {
+    width: 82px;
+    border-bottom: 1px solid #0885a0;
+    position: relative;
+    right: 9px;
+    left: 9px;
+  }
+}
