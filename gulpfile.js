@@ -16,6 +16,26 @@ var imagemin = require("gulp-imagemin");
 var del = require("del");
 var run = require("run-sequence");
 var jsonServer = require("gulp-json-srv");
+var config = {
+        html: {
+          src: '_assets/html/*.html',
+          dest: '_build/html'
+        },
+        data: {
+          src: '_assets/data/*.json'
+        }
+      }
+
+var getJsonData = function(file) {
+  return require('./data/' + path.basename(file.path, path.extname(file.path)) + '.json');
+};
+
+gulp.task('templates', function() {
+  return gulp.src(config.html.src)
+    .pipe(data(getJsonData))
+    .pipe(swig())
+    .pipe(gulp.dest(config.html.dest))
+});
 
 gulp.task("style", function() {
   gulp.src("source/sass/style.scss")

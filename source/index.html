@@ -10,43 +10,71 @@
   <body>
     <main class="main-section">
       <h3 class="section__title">Справочники</h3>
-      <ul id="dataList"></ul>
-<div class="templates">
-  <div id="listItem">
-    <div class="row1">
-      <div class="title"></div>
-      <div class="amount"></div>
-    </div>
-    <div class="row2"><div class="description"></div></div>
-  </div>
-</div>
-      <ul class="section__list" id="list">
-        <li class="section__item section__item--type"><span>Типы ошибок</span></li>
-        <li class="section__item section__item--code"><span>Коды ошибок</span></li>
-        <li class="section__item section__item--security"><span>Коды благонадежности</span></li>
-        <li class="section__item section__item--test"><span>Библиотека тестов</span></li>
-        <li class="section__item section__item--alarm"><span>Оповещения</span></li>
-        <li class="section__item section__item--application"><span>Нормативные обработки заявки</span></li>
-        <li class="section__item section__item--credit"><span>Кредитные продукты</span></li>
-        <li class="section__item section__item--mark"><span>Оценки АР</span></li>
-        <li class="section__item section__item--value"><span>Реестр средних значений</span></li>
+      <ul class="section__list">
       </ul>
     </main>
     <script>
-    var dataJSON = '[{"id": 1,"name": "Типы ошибок"},{"id": 2,"name": "Коды ошибок"},{"id": 3,  "name": "Коды благонадежности"},{"id": 4,"name": "Библиотека тестов"},
-{"id": 5,"name": "Оповещения"},{"id": 6, "name": "Нормативные обработки заявки"},{"id": 7,"name": "Кредитные продукты"},{"id": 8,"name": "Оценки АР"},
-{"id": 9,"name": "Реестр средних значений"}]';
+    $(document).ready(function () {
+    var json = [{
+            "id": "1",
+            "name": "Типы ошибок",
+            "image":"../img/icon-type.png",
+        },
+        {
+                "id": "2",
+                "name": "Коды ошибок",
+                "image":"../img/icon-error.png",
+        },
+        {
+                "id": "3",
+                "name": "Коды благонадежности",
+                "image":"../img/icon-security.png",
+        },
+        {
+                "id": "4",
+                "name": "Библиотека тестов",
+                "image":"../img/icon-test.png",
+        },
+        {
+                "id": "5",
+                "name": "Оповещения",
+                "image":"../img/icon-alarm.png",
+        },
+        {
+                "id": "6",
+                "name": "Нормативные обработки заявки",
+                "image":"../img/icon-application.png",
+        },
+        {
+                "id": "7",
+                "name": "Кредитные продукты",
+                "image":"../img/icon-credit.png",
+        },
+        {
+                "id": "8",
+                "name": "Оценки АР",
+                "image":"../img/icon-mark.png",
+        },
+        {
+                "id": "9",
+                "name": "Реестр средних значений",
+                "image":"../img/icon-value.png",
+        },
+      ];
 
-var dataObject = JSON.parse(dataJSON);
-var listItemString = $('#listItem').html();
+      var mainMenu = $("ul.section__list");
+      var i;
 
-dataObject.forEach(buildNewList);
+    for(var i = 0; i < json.length; i++){
+    var navItem = json[i];
+    var new_li = $('<li class="section__item">' + navItem.name + '</li>');
+    var imagehtml=$('<img src="'+navItem.image+'" alt=""/>');
+    var li = $("li.section__item");
+    mainMenu.append(new_li);
+    li.append( imagehtml);
 
-function buildNewList(item, index) {
-var listItem = $('<li>' + listItemString + '</li>');
-var listItemTitle = $('.title', listItem);
-listItemTitle.html(item.name);
-$('#dataList').append(listItem);
+};
+});
     </script>
   </body>
   </html>
