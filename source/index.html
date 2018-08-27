@@ -63,17 +63,18 @@
       ];
 
       var mainMenu = $("ul.section__list");
-      var i;
+      var i, j;
 
     for(var i = 0; i < json.length; i++){
     var navItem = json[i];
     var new_li = $('<li class="section__item">' + navItem.name + '</li>');
-    var imagehtml=$('<img src="'+navItem.image+'" alt=""/>');
-    var li = $("li.section__item");
     mainMenu.append(new_li);
-    li.append( imagehtml);
+  }
 
-};
+  for(var j = 0; j < json[i].json.length; j++){
+  var imagehtml= $('<img src="'+navItem.image+'" alt=""/>', new_li );
+  new_li.append(imagehtml);
+}
 });
     </script>
   </body>
