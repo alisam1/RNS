@@ -1,3 +1,8 @@
+
+.error-form
+{
+  margin-left: 20px;
+}
 .error-form fieldset
 {
   border: none;
@@ -7,6 +12,20 @@
 
 .error-form fieldset
 {
+  font-family: "PT Sans";
+  font-size: 14px;
+  line-height: 20px;
+  color: #333333;
+}
+
+.error-form label{
+  font-family: "PT Sans";
+  font-size: 14px;
+  line-height: 20px;
+  color: #333333;
+}
+
+.error-form {
   font-family: "PT Sans";
   font-size: 14px;
   line-height: 20px;
@@ -27,7 +46,7 @@
   margin-bottom: 20px;
 }
 
-.error-form select
+select
 {
   width: 290px;
   height: 28px;
@@ -53,12 +72,8 @@
   appearance: none!important;
 }
 
-.textarea
-{
-  margin-top: -20px;
-}
 
-.error-form textarea
+input.form_textarea
 {
   width: 290px;
   height: 110px;
@@ -70,6 +85,8 @@
   display: block;
   margin-top: -20px;
   margin-bottom: 20px;
+  padding: 0;
+  float: none;
 }
 
 .buttons

@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*! normalize.css v8.0.0 | MIT License | github.com/necolas/normalize.css */
 /* Document
    ========================================================================== */
@@ -556,6 +557,9 @@ template {
     right: 9px;
     left: 9px; }
 
+.error-form {
+  margin-left: 20px; }
+
 .error-form fieldset {
   border: none;
   display: -webkit-box;
@@ -567,6 +571,18 @@ template {
           flex-direction: column; }
 
 .error-form fieldset {
+  font-family: "PT Sans";
+  font-size: 14px;
+  line-height: 20px;
+  color: #333333; }
+
+.error-form label {
+  font-family: "PT Sans";
+  font-size: 14px;
+  line-height: 20px;
+  color: #333333; }
+
+.error-form {
   font-family: "PT Sans";
   font-size: 14px;
   line-height: 20px;
@@ -584,7 +600,7 @@ template {
   margin-top: -20px;
   margin-bottom: 20px; }
 
-.error-form select {
+select {
   width: 290px;
   height: 28px;
   border-radius: 3px;
@@ -608,10 +624,7 @@ template {
   -ms-appearance: none;
   appearance: none !important; }
 
-.textarea {
-  margin-top: -20px; }
-
-.error-form textarea {
+input.form_textarea {
   width: 290px;
   height: 110px;
   border-radius: 3px;
@@ -621,7 +634,9 @@ template {
   bottom: 2px;
   display: block;
   margin-top: -20px;
-  margin-bottom: 20px; }
+  margin-bottom: 20px;
+  padding: 0;
+  float: none; }
 
 .buttons {
   margin-left: 20px; }
@@ -639,6 +654,77 @@ template {
   border-radius: 3px;
   border: none;
   margin-right: 20px; }
+
+#table {
+  width: 920px;
+  border: 1px solid #999999;
+  border-radius: 3px;
+  padding: 0;
+  margin-top: 20px;
+  margin-left: 20px; }
+
+#table th {
+  height: 30px;
+  background-color: #0885a0;
+  font-family: "PT Sans";
+  font-size: 14px;
+  line-height: 20px;
+  color: #fff;
+  text-align: left; }
+
+#table tr:nth-child(odd) {
+  /* Задаем стили для нечетных рядов таблицы */
+  background: #fff; }
+
+#table tr:nth-child(even) {
+  /* Задаем стили для четных рядов таблицы */
+  background: #f8f8f8; }
+
+#table td {
+  height: 28px;
+  font-family: "PT Sans";
+  font-size: 14px;
+  line-height: 20px;
+  color: #333333; }
+
+#table td:nth-child(1) {
+  width: 290px;
+  font-family: "PT Sans";
+  font-size: 14px;
+  line-height: 20px;
+  color: #0885a0;
+  text-decoration: underline;
+  padding-bottom: 2px; }
+
+#table td:nth-child(2+4) {
+  margin-left: 10px; }
+
+.table_button {
+  width: 130px;
+  padding-top: 5px;
+  padding-bottom: 11px;
+  border: none;
+  border-radius: 3px;
+  background-color: #0885a0;
+  font-family: "PT Sans";
+  font-size: 14px;
+  line-height: 20px;
+  color: #fff;
+  margin-left: 20px;
+  padding-left: 10px; }
+
+.form-control {
+  width: 905px;
+  height: 30px;
+  border: 1px solid #999999;
+  border-radius: 3px;
+  margin-top: 50px;
+  margin-left: 20px;
+  font-family: "PT Sans";
+  font-size: 14px;
+  line-height: 20px;
+  color: #333333;
+  padding-left: 10px; }
 
 /*! jQuery UI - v1.12.1 - 2016-09-14
 * http://jqueryui.com

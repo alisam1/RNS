@@ -20,55 +20,13 @@
       </div>
       <h3 class="error-page__title">Грамматическая ошибка</h3>
       <form class="error-form" action="#" method="post">
-  <fieldset>
+      </form>
+<div class="buttons">
+<button class="form__button">Сохранить</button>
+<button class="form__button">Оменить изменения</button>
+<button class="form__button">Удалить</button>
+</div>
 
-
-    <label>
-      Наименование
-      <input type="text" name="name" placeholder="Грамматическая ошибка" required="">
-    </label>
-
-    <label>
-      Тяжесть
-      <input type="text" name="weight" placeholder="1" required="">
-    </label>
-
-    <label>
-      Балл
-      <input type="text" name="point" placeholder="0,25" required="">
-    </label>
-
-    <label>
-      Действует до
-      <input type="text" id="datepicker" placeholder="12.02.2015" style="width: 275px; height: 27px;">
-    </label>
-
-    <div class="textarea">
-    <label>
-      Описание
-      <textarea name="description" placeholder="Описание ошибка"></textarea>
-    </label>
-    </div>
-
-    <label>
-      Единицы измерения
-      <select name="quantity" required="">
-        <option value="1" selected="">Баллы</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
-        <option value="5">5</option>
-      </select>
-    </label>
-
-  </fieldset>
-  <div class="buttons">
-  <button class="form__button">Сохранить</button>
-  <button class="form__button">Оменить изменения</button>
-  <button class="form__button">Удалить</button>
-  </div>
-
-</form>
     </main>
     <script>
     $( function() {
@@ -79,6 +37,106 @@
         buttonText: "Select date"
 });
 } );
+$(document).ready(function () {
+var json = [
+  {
+    "id": "name",
+    "name": "Наименование",
+    "type": "TEXT",
+    "value": "Грамматическая ошибка"
+  },
+  {
+    "id": "weight",
+    "name": "Тяжесть",
+    "type": "INTEGER",
+    "value": 1
+
+  },
+  {
+    "id": "point",
+    "name": "Балл",
+    "type": "FLOAT",
+    "value": 0.25
+  },
+  {
+    "id": "endDate",
+    "name": "Действует до",
+    "type": "DATE",
+    "value": "12.02.2015"
+  },
+  {
+    "id": "describe",
+    "name": "Описание",
+    "type": "TEXTAREA",
+    "value": "Описание ошибки"
+  },
+  {
+    "id": "units",
+    "name": "Единицы измерения",
+    "type": "select",
+    "values": [
+      {
+        "id": 1,
+        "name": "Баллы",
+        "selected": true
+      },
+      {
+        "id": 2,
+        "name": "Минуты",
+        "selected": false
+      },
+      {
+        "id": 3,
+        "name": "Часы",
+        "selected": false
+      }
+    ]
+  }];
+
+  var select = [
+    {
+      "id": 1,
+      "name": "Баллы",
+      "selected": true
+    },
+    {
+      "id": 2,
+      "name": "Минуты",
+      "selected": false
+    },
+    {
+      "id": 3,
+      "name": "Часы",
+      "selected": false
+    }
+  ]
+
+  var mainForm = $("form.error-form");
+  var i;
+
+  for (var i = 0; i < json.length; i++) {
+      var formInput = json[i];
+      var new_label = $('<label>' + formInput.name +'</label>' );
+      mainForm.append(new_label);
+      var new_input = $('<input type="' + formInput.type + '" value="' + formInput.value + '">');
+      $("input[type=textarea]").addClass("form_textarea");
+      new_label.append(new_input);
+      if(formInput.type=="select"){
+        $("input[type=select]").remove();
+
+        var form_select = $('<select></select>' );
+
+        $.each(select,function(key, value)
+        {
+          var selectInput = select[key];
+          form_select.append('<option value=' + selectInput.id + '>' + selectInput.name + '</option>');
+        });
+        $('select').addClass("form_select");
+        new_label.append(form_select);
+
+      }
+}
+});
 </script>
   </body>
   </html>

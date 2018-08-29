@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <title>Тестовое задание RNS</title>
+    <link href="css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  </head>
+  <body>
+    <main class="main-section">
+      <div class="breadcrumbs">
+      <ul class="breadcrumbs__list">
+        <li class="breadcrumbs__item breadcrumbs__item--library">Справочники</li>
+        <li class="breadcrumbs__item"><img src="img/arrow.png" alt="Arrow" width="9" height="9"></li>
+      </ul>
+      </div>
+      <h3 class="error-page__title">Типы ошибок</h3>
+      <button class="table_button">Создать новый</button>
+      <input class="form-control" type="text" placeholder="Поиск" id="search-text" onkeyup="tableSearch()">
+      <table id="table">
+      </table>
+    </main>
+    <script>
+    function tableSearch() {
+    var phrase = document.getElementById('search-text');
+    var table = document.getElementById('table');
+    var regPhrase = new RegExp(phrase.value, 'i');
+    var flag = false;
+    for (var i = 1; i < table.rows.length; i++) {
+        flag = false;
+        for (var j = table.rows[i].cells.length - 1; j >= 0; j--) {
+            flag = regPhrase.test(table.rows[i].cells[j].innerHTML);
+            if (flag) break;
+        }
+        if (flag) {
+            table.rows[i].style.display = "";
+        } else {
+            table.rows[i].style.display = "none";
+        }
+
+    }
+}
+$(document).ready(function () {
+var table = {
+  "fields": [
+    {
+      "id": "name",
+      "name": "Наименование",
+      "type": "TEXT"
+    },
+    {
+      "id": "weight",
+      "name": "Тяжесть",
+      "type": "INTEGER"
+    },
+    {
+      "id": "point",
+      "name": "Балл",
+      "type": "FLOAT"
+    },
+    {
+      "id": "endDate",
+      "name": "Действует до",
+      "type": "DATE"
+    }
+  ],
+  "items": [
+    {
+      "id": 1,
+      "name": "Грамматическая ошибка",
+      "weight": 1,
+      "point": 0.25,
+      "endDate": "12.02.2015"
+    },
+    {
+      "id": 2,
+      "name": "Ошибка резидента",
+      "weight": 1,
+      "point": 0.25,
+      "endDate": "12.02.2015"
+    },
+    {
+      "id": 3,
+      "name": "Обычная такая ошибка, стандартная",
+      "weight": 0,
+      "point": 0.25,
+      "endDate": "12.02.2015"
+    },
+    {
+      "id": 4,
+      "name": "Не ошибка",
+      "weight": 2,
+      "point": 0.25,
+      "endDate": "12.02.2015"
+    },
+    {
+      "id": 5,
+      "name": "Ерунда, а не ошибка",
+      "weight": 12,
+      "point": 0.25,
+      "endDate": "12.02.2015"
+    },
+    {
+      "id": 6,
+      "name": "Ошибка новичка",
+      "weight": 2,
+      "point": 0.25,
+      "endDate": "12.02.2015"
+    },
+    {
+      "id": 7,
+      "name": "Стратегическая ошибка",
+      "weight": 1,
+      "point": 0.25,
+      "endDate": "12.02.2015"
+    },
+    {
+      "id": 8,
+      "name": "Просто ошибка, без прилагательных, в две строки",
+      "weight": 2,
+      "point": 0.25,
+      "endDate": ""
+    },
+    {
+      "id": 9,
+      "name": "Ошибка",
+      "weight": 3,
+      "point": 0.25,
+      "endDate": ""
+    },
+    {
+      "id": 10,
+      "name": "Ошибка 22",
+      "weight": 2,
+      "point": 0.25,
+      "endDate": "12.02.2015"
+    },
+    {
+      "id": 11,
+      "name": "Замечание",
+      "weight": 3,
+      "point": 0.25,
+      "endDate": "12.02.2015"
+    }
+  ]}
+
+  $(table.fields).each(function(index, item) {
+  $('#table').append('<th>' + item.name + '</th>');
+});
+
+  $(table.items).each(function(index, item) {
+  $('#table').append('<tr><td>' + item.name + '</td><td>' + item.weight + '</td><td>' + item.point + '</td><td>' + item.endDate + '</td></tr>');
+});
+});
+</script>
+  </body>
+  </html>
