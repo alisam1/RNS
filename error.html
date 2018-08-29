@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <title>Тестовое задание RNS</title>
+    <link href="css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  </head>
+  <body>
+    <main class="main-section">
+      <div class="breadcrumbs">
+      <ul class="breadcrumbs__list">
+        <li class="breadcrumbs__item breadcrumbs__item--library">Справочники</li>
+        <li class="breadcrumbs__item"><img src="img/arrow.png" alt="Arrow" width="9" height="9"></li>
+        <li class="breadcrumbs__item breadcrumbs__item--error">Типы ошибок</li>
+        <li class="breadcrumbs__item"><img src="img/arrow.png" alt="Arrow" width="9" height="9"></li>
+      </ul>
+      </div>
+      <h3 class="error-page__title">Грамматическая ошибка</h3>
+      <form class="error-form" action="#" method="post">
+      </form>
+<div class="buttons">
+<button class="form__button">Сохранить</button>
+<button class="form__button">Оменить изменения</button>
+<button class="form__button">Удалить</button>
+</div>
+
+    </main>
+    <script>
+    $( function() {
+      $( "#datepicker" ).datepicker({
+        showOn: "button",
+        buttonImage: "img/icon-calendar.png",
+        buttonImageOnly: true,
+        buttonText: "Select date"
+});
+} );
+$(document).ready(function () {
+var json = [
+  {
+    "id": "name",
+    "name": "Наименование",
+    "type": "TEXT",
+    "value": "Грамматическая ошибка"
+  },
+  {
+    "id": "weight",
+    "name": "Тяжесть",
+    "type": "INTEGER",
+    "value": 1
+
+  },
+  {
+    "id": "point",
+    "name": "Балл",
+    "type": "FLOAT",
+    "value": 0.25
+  },
+  {
+    "id": "endDate",
+    "name": "Действует до",
+    "type": "DATE",
+    "value": "12.02.2015"
+  },
+  {
+    "id": "describe",
+    "name": "Описание",
+    "type": "TEXTAREA",
+    "value": "Описание ошибки"
+  },
+  {
+    "id": "units",
+    "name": "Единицы измерения",
+    "type": "select",
+    "values": [
+      {
+        "id": 1,
+        "name": "Баллы",
+        "selected": true
+      },
+      {
+        "id": 2,
+        "name": "Минуты",
+        "selected": false
+      },
+      {
+        "id": 3,
+        "name": "Часы",
+        "selected": false
+      }
+    ]
+  }];
+
+  var select = [
+    {
+      "id": 1,
+      "name": "Баллы",
+      "selected": true
+    },
+    {
+      "id": 2,
+      "name": "Минуты",
+      "selected": false
+    },
+    {
+      "id": 3,
+      "name": "Часы",
+      "selected": false
+    }
+  ]
+
+  var mainForm = $("form.error-form");
+  var i;
+
+  for (var i = 0; i < json.length; i++) {
+      var formInput = json[i];
+      var new_label = $('<label>' + formInput.name +'</label>' );
+      mainForm.append(new_label);
+      var new_input = $('<input type="' + formInput.type + '" value="' + formInput.value + '">');
+      $("input[type=textarea]").addClass("form_textarea");
+      new_label.append(new_input);
+      if(formInput.type=="select"){
+        $("input[type=select]").remove();
+
+        var form_select = $('<select></select>' );
+
+        $.each(select,function(key, value)
+        {
+          var selectInput = select[key];
+          form_select.append('<option value=' + selectInput.id + '>' + selectInput.name + '</option>');
+        });
+        $('select').addClass("form_select");
+        new_label.append(form_select);
+
+      }
+}
+});
+</script>
+  </body>
+  </html>

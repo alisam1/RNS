@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <title>Тестовое задание RNS</title>
+    <link href="css/style.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  </head>
+  <body>
+    <main class="main-section">
+      <h3 class="section__title">Справочники</h3>
+      <ul class="section__list">
+      </ul>
+    </main>
+    <script>
+    $(document).ready(function () {
+    var json = [{
+            "id": "1",
+            "name": "Типы ошибок",
+            "image":"../img/icon-type.png",
+        },
+        {
+                "id": "2",
+                "name": "Коды ошибок",
+                "image":"../img/icon-error.png",
+        },
+        {
+                "id": "3",
+                "name": "Коды благонадежности",
+                "image":"../img/icon-security.png",
+        },
+        {
+                "id": "4",
+                "name": "Библиотека тестов",
+                "image":"../img/icon-test.png",
+        },
+        {
+                "id": "5",
+                "name": "Оповещения",
+                "image":"../img/icon-alarm.png",
+        },
+        {
+                "id": "6",
+                "name": "Нормативные обработки заявки",
+                "image":"../img/icon-application.png",
+        },
+        {
+                "id": "7",
+                "name": "Кредитные продукты",
+                "image":"../img/icon-credit.png",
+        },
+        {
+                "id": "8",
+                "name": "Оценки АР",
+                "image":"../img/icon-mark.png",
+        },
+        {
+                "id": "9",
+                "name": "Реестр средних значений",
+                "image":"../img/icon-value.png",
+        },
+      ];
+
+      var mainMenu = $("ul.section__list");
+      var i;
+
+      for (var i = 0; i < json.length; i++) {
+          var navItem = json[i];
+          var new_li = $('<li class="section__item">' + navItem.name + '</li>');
+          mainMenu.append(new_li);
+          var imagehtml = $('<img src="' + navItem.image + '" alt=""/>', new_li);
+          new_li.append(imagehtml);
+  }
+});
+    </script>
+  </body>
+  </html>
