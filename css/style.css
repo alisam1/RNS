@@ -542,7 +542,8 @@ input.form_textarea {
   border-radius: 3px;
   padding: 0;
   margin-top: 20px;
-  margin-left: 20px; }
+  margin-left: 20px;
+  height: auto; }
 
 #table th {
   height: 30px;
@@ -606,6 +607,47 @@ input.form_textarea {
   line-height: 20px;
   color: #333333;
   padding-left: 10px; }
+
+@media screen and (min-width: 768px) and (max-width: 1200px) {
+  #table {
+    width: 750px;
+    margin: 0 auto;
+    background-color: #f4f4f4;
+    position: relative;
+    top: 20px; }
+  .form-control {
+    width: 735px;
+    height: 30px;
+    border: 1px solid #999999;
+    border-radius: 3px;
+    margin-top: 50px;
+    font-family: "PT Sans";
+    font-size: 14px;
+    line-height: 20px;
+    color: #333333;
+    padding-left: 10px;
+    margin-left: 10px; } }
+
+@media screen and (min-width: 320px) and (max-width: 768px) {
+  #table {
+    width: 310px;
+    margin: 0 auto;
+    background-color: #f4f4f4;
+    position: relative;
+    height: auto;
+    top: 20px; }
+  .form-control {
+    width: 295px;
+    height: 30px;
+    border: 1px solid #999999;
+    border-radius: 3px;
+    margin-top: 50px;
+    margin-left: 5px;
+    font-family: "PT Sans";
+    font-size: 14px;
+    line-height: 20px;
+    color: #333333;
+    padding-left: 10px; } }
 
 /*! jQuery UI - v1.12.1 - 2016-09-14
 * http://jqueryui.com
