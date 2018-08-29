@@ -320,15 +320,6 @@ template {
   padding-top: 92px;
   padding-left: 19px; }
 
-.error-page__title {
-  font-family: "PT Sans", arial;
-  font-weight: 700;
-  font-size: 30px;
-  line-height: 20px;
-  color: #333333;
-  padding-top: 52px;
-  padding-left: 20px; }
-
 .section__list {
   list-style-type: none;
   display: -webkit-box;
@@ -438,6 +429,15 @@ template {
     right: 9px;
     left: 9px; }
 
+.error-page__title {
+  font-family: "PT Sans", arial;
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 20px;
+  color: #333333;
+  padding-top: 52px;
+  padding-left: 20px; }
+
 .error-form {
   margin-left: 20px; }
 
@@ -535,6 +535,38 @@ input.form_textarea {
   border-radius: 3px;
   border: none;
   margin-right: 20px; }
+
+@media screen and (min-width: 320px) and (max-width: 768px) {
+  .error-page__title {
+    font-size: 26px; }
+  .error-form {
+    width: 320px; }
+  .error-form label {
+    width: 90%;
+    height: 28px;
+    padding-bottom: 10px; }
+  .error-form input {
+    width: 90%;
+    height: 28px;
+    border-radius: 3px;
+    border: 1px solid #cccccc;
+    position: relative;
+    top: 30px;
+    display: block;
+    margin-top: -20px;
+    margin-bottom: 40px;
+    display: block;
+    margin-left: 0px; }
+  select {
+    width: 90%;
+    margin-left: 0px;
+    margin-top: 10px; }
+  .buttons {
+    margin-left: 20px; }
+  .form__button {
+    padding-left: 7px;
+    padding-right: 7px;
+    margin-right: 0px; } }
 
 #table {
   width: 920px;
