@@ -346,6 +346,12 @@ template {
   position: relative;
   top: 10px; }
 
+.section__item img {
+  position: relative;
+  right: 60%;
+  width: 30px;
+  height: 30px; }
+
 .section__item {
   width: 290px;
   height: 109px;
@@ -355,147 +361,22 @@ template {
   font-family: "PT Sans", arial;
   color: #fff;
   font-size: 24px;
-  line-height: 28px; }
+  line-height: 28px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center; }
 
-.section__item--type span {
-  position: relative;
-  top: 42px;
-  margin-left: 80px; }
-
-.section__item--type::before {
-  content: "";
-  position: absolute;
-  width: 30px;
-  height: 24px;
-  background-image: url("../img/icon-type.png");
-  top: 44px;
-  margin-left: 30px; }
-
-.section__item--code span {
-  position: relative;
-  top: 42px;
-  margin-left: 75px; }
-
-.section__item--code::before {
-  content: "";
-  position: absolute;
-  width: 30px;
-  height: 29px;
-  background-image: url("../img/icon-error.png");
-  margin-top: 42px;
-  margin-left: 25px; }
-
-.section__item--security span {
-  position: relative;
-  top: 30px;
-  margin-left: 70px;
-  text-align: left;
-  display: block; }
-
-.section__item--security::before {
-  content: "";
-  position: absolute;
-  width: 26px;
-  height: 27px;
-  background-image: url("../img/icon-security.png");
-  margin-top: 42px;
-  margin-left: 20px; }
-
-.section__item--test span {
-  position: relative;
-  top: 28px;
-  margin-left: 80px;
-  text-align: left;
+.section__item span {
+  width: 155px;
   display: block;
-  width: 100px; }
-
-.section__item--test::before {
-  content: "";
-  position: absolute;
-  width: 27px;
-  height: 28px;
-  background-image: url("../img/icon-test.png");
-  margin-top: 42px;
-  margin-left: 30px; }
-
-.section__item--alarm span {
-  position: relative;
-  top: 42px;
-  margin-left: 75px; }
-
-.section__item--alarm::before {
-  content: "";
-  position: absolute;
-  width: 30px;
-  height: 27px;
-  background-image: url("../img/icon-alarm.png");
-  margin-top: 44px;
-  margin-left: 25px; }
-
-.section__item--application span {
-  position: relative;
-  top: 13px;
-  margin-left: 70px;
-  text-align: left;
-  display: block;
-  width: 100px; }
-
-.section__item--application::before {
-  content: "";
-  position: absolute;
-  width: 33px;
-  height: 30px;
-  background-image: url("../img/icon-application.png");
-  margin-top: 40px;
-  margin-left: 20px; }
-
-.section__item--credit span {
-  position: relative;
-  top: 26px;
-  margin-left: 80px;
-  text-align: left;
-  display: block;
-  width: 100px; }
-
-.section__item--credit::before {
-  content: "";
-  position: absolute;
-  width: 33px;
-  height: 27px;
-  background-image: url("../img/icon-credit.png");
-  margin-top: 42px;
-  margin-left: 30px; }
-
-.section__item--mark span {
-  position: relative;
-  top: 42px;
-  margin-left: 75px; }
-
-.section__item--mark::before {
-  content: "";
-  position: absolute;
-  width: 33px;
-  height: 27px;
-  background-image: url("../img/icon-mark.png");
-  margin-top: 42px;
-  margin-left: 25px; }
-
-.section__item--value span {
-  position: relative;
-  top: 26px;
-  margin-left: 70px;
-  text-align: left;
-  display: block;
-  width: 200px; }
-
-.section__item--value::before {
-  content: "";
-  position: absolute;
-  width: 26px;
-  height: 23px;
-  background-image: url("../img/icon-value.png");
-  margin-top: 44px;
-  margin-left: 20px; }
+  left: 30px;
+  position: relative; }
 
 @media screen and (min-width: 768px) and (max-width: 1200px) {
   .main-section {
