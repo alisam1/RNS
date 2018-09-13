@@ -4,12 +4,13 @@
     <meta charset="utf-8">
     <title>Тестовое задание RNS</title>
     <link href="css/style.css" rel="stylesheet">
+    <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
   </head>
   <body>
     <main class="main-section">
-      <h3 class="section__title">Справочники</h3>
+      <h1 class="section__title">Справочники</h1>
       <ul class="section__list">
       </ul>
     </main>
@@ -18,47 +19,47 @@
     var json = [{
             "id": "1",
             "name": "Типы ошибок",
-            "image":"./img/icon-type.png",
+            "image":"fa fa-th fa-lg",
         },
         {
                 "id": "2",
                 "name": "Коды ошибок",
-                "image":"./img/icon-error.png",
+                "image":"fa fa-exclamation-triangle fa-lg",
         },
         {
                 "id": "3",
                 "name": "Коды благонадежности",
-                "image":"./img/icon-security.png",
+                "image":"fa fa-thumbs-o-up fa-lg",
         },
         {
                 "id": "4",
                 "name": "Библиотека тестов",
-                "image":"./img/icon-test.png",
+                "image":"fa fa-book fa-lg",
         },
         {
                 "id": "5",
                 "name": "Оповещения",
-                "image":"./img/icon-alarm.png",
+                "image":"fa fa-comment-o fa-lg",
         },
         {
                 "id": "6",
                 "name": "Нормативные обработки заявки",
-                "image":"./img/icon-application.png",
+                "image":"fa fa-cogs fa-lg",
         },
         {
                 "id": "7",
                 "name": "Кредитные продукты",
-                "image":"./img/icon-credit.png",
+                "image":"fa fa-credit-card-alt fa-lg",
         },
         {
                 "id": "8",
                 "name": "Оценки АР",
-                "image":"./img/icon-mark.png",
+                "image":"fa fa-bar-chart fa-lg",
         },
         {
                 "id": "9",
                 "name": "Реестр средних значений",
-                "image":"./img/icon-value.png",
+                "image":"fa fa-inbox fa-lg",
         },
       ];
 
@@ -69,7 +70,7 @@
           var navItem = json[i];
           var new_li = $('<li class="section__item"><span>' + navItem.name + '</span></li>');
           mainMenu.append(new_li);
-          var imagehtml = $('<img src="' + navItem.image + '" alt=""/>', new_li);
+          var imagehtml = $('<i class="'+ navItem.image + '"></i>', new_li);
           new_li.append(imagehtml);
   }
 });
